@@ -1,0 +1,16 @@
+<%= simple_form_for @rubric, :url => admin_rubric_path(@rubric), :html => { :class => 'form-horizontal' } do |f| %>
+    <%= f.error_notification %>
+
+
+    <%= f.input :title %>
+    <%= f.input :language, :as => :select, :collection => SUPPORTED_LANGUAGES.keys.map(&:to_s), :include_blank =>false %>
+    <%= f.input :translation_id, :collection => @rubrics_for_translation, :prompt => 'Select rubric' %>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                admin_rubrics_path, :class => 'btn' %>
+  </div>
+<% end %>
+
+

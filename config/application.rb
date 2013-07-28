@@ -62,3 +62,5 @@ module Project17
     config.assets.version = '1.0'
   end
 end
+
+SUPPORTED_LANGUAGES = {:en => 'EN', :ru => 'RU'}

@@ -11,6 +11,7 @@ gem 'therubyracer' # to support twitter-bootstrap-rails
 gem 'less-rails' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem 'twitter-bootstrap-rails' #design for admin part
 gem 'devise' #authentication
+gem 'simple_form' #form builder admin part
 
 
 # Gems used only for assets and not required

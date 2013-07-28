@@ -2,6 +2,7 @@ Project17::Application.routes.draw do
 
   namespace :admin do
     resources 'dashboard', :only => [:index]
+    resources :rubrics
   end
 
   devise_for :admin_users
