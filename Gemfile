@@ -12,6 +12,11 @@ gem 'less-rails' #Sprockets (what Rails 3.1 uses for its asset pipeline) support
 gem 'twitter-bootstrap-rails' #design for admin part
 gem 'devise' #authentication
 gem 'simple_form' #form builder admin part
+gem 'truncate_html' #to truncate text with html tags
+gem 'tinymce-rails' #to have html editor for articles
+gem 'chosen-rails' #used for selects in admin area
+gem 'compass-rails', github: 'milgner/compass-rails', branch: 'rails4' #for chosen support
+gem 'pry' #for debug
 
 
 # Gems used only for assets and not required

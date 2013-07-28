@@ -7,5 +7,7 @@ class CreateRubrics < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :rubrics, [:translation_id], :name => 'rubrics_translation_id_index'
   end
 end

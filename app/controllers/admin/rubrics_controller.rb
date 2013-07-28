@@ -52,7 +52,7 @@ class Admin::RubricsController <  Admin::BaseController
       params.require(:rubric).permit(:title, :language, :translation_id)
     end
 
-  #Private. Set @rubrics_for_translation for create\update from (translated rubric)
+  #Private. Set @rubrics_for_translation for create\update form (translated rubric)
   def set_rubrics_for_select
     @rubrics_for_translation = Rubric.where('id != ?', @rubric.try(:id) || 0).select(:title, :id).to_a
   end

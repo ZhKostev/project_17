@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130726113905) do
+ActiveRecord::Schema.define(version: 20130728111228) do
 
   create_table "admin_users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -30,5 +30,37 @@ ActiveRecord::Schema.define(version: 20130726113905) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "articles", force: true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.string   "language"
+    t.integer  "translation_id"
+    t.text     "meta_description"
+    t.boolean  "published"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "articles", ["published"], name: "articles_published_index", using: :btree
+  add_index "articles", ["translation_id"], name: "articles_translation_id_index", using: :btree
+
+  create_table "articles_rubrics", id: false, force: true do |t|
+    t.integer "article_id"
+    t.integer "rubric_id"
+  end
+
+  add_index "articles_rubrics", ["article_id"], name: "articles_article_id_rubrics_index", using: :btree
+  add_index "articles_rubrics", ["rubric_id"], name: "articles_rubric_id_rubrics_index", using: :btree
+
+  create_table "rubrics", force: true do |t|
+    t.string   "title"
+    t.string   "language"
+    t.integer  "translation_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "rubrics", ["translation_id"], name: "rubrics_translation_id_index", using: :btree
 
 end
