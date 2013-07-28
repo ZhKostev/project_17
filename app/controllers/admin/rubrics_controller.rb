@@ -1,4 +1,4 @@
-class Admin::RubricsController <  Admin::BaseController
+class Admin::RubricsController < Admin::BaseController
   before_action :set_rubric, only: [:show, :edit, :update, :destroy]
   before_action :set_rubrics_for_select, only: [:new, :edit]
 
@@ -42,15 +42,15 @@ class Admin::RubricsController <  Admin::BaseController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_rubric
-      @rubric = Rubric.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_rubric
+    @rubric = Rubric.friendly.find(params[:id])
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def rubric_params
-      params.require(:rubric).permit(:title, :language, :translation_id)
-    end
+  # Only allow a trusted parameter "white list" through.
+  def rubric_params
+    params.require(:rubric).permit(:title, :language, :translation_id)
+  end
 
   #Private. Set @rubrics_for_translation for create\update form (translated rubric)
   def set_rubrics_for_select

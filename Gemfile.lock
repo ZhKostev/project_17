@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/FriendlyId/friendly_id.git
+  revision: cc5ce00077b168523a95b195d9911e5576e6489f
+  branch: master
+  specs:
+    friendly_id (5.0.0.alpha1)
+
+GIT
   remote: git://github.com/milgner/compass-rails.git
   revision: c86e7fd9c2605c80816a2f64a3fb8b7c3a09e494
   branch: rails4
@@ -175,6 +182,7 @@ DEPENDENCIES
   compass-rails!
   devise
   factory_girl_rails
+  friendly_id!
   jquery-rails
   less-rails
   mysql2

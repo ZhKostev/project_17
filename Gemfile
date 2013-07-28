@@ -17,7 +17,7 @@ gem 'tinymce-rails' #to have html editor for articles
 gem 'chosen-rails' #used for selects in admin area
 gem 'compass-rails', github: 'milgner/compass-rails', branch: 'rails4' #for chosen support
 gem 'pry' #for debug
-
+gem 'friendly_id', github: 'FriendlyId/friendly_id', branch: 'master' #add slugs to articles and rubrics (pretty urls)
 
 # Gems used only for assets and not required
 # in production environments by default.
