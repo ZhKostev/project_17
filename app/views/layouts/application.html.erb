@@ -2,13 +2,37 @@
 <html>
 <head>
   <title>Project17</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag 'application', :media => 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="all_header">
+  <div id="header_inner">
+    <div id="logo">
+      <%= t(:site_name) %>
+    </div>
+    <div id="site_menu">
+      <%= link_to t(:home), root_path, :class => 'menu_links' %>
+      <%= link_to t(:about_me), about_me_path, :class => 'menu_links', :id => 'last_menu_link' %>
+    </div>
+  </div>
+</div>
 
-<%= yield %>
+<div id="blur_bg">
+  <div id="main_content">
+    <div id="column_content">
+      <div id="left_part">
+        <%= content_for?(:left_part) ? yield(:left_part) : yield %>
+      </div>
+      <div id="right_part">
+        <%= yield(:right_part) if content_for?(:right_part) %>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</div>
+
 
 </body>
 </html>

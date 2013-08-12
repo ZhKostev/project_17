@@ -1,0 +1,11 @@
+/*Contain styles for generals elements such as headers, paragraph etc*/
+@import "mixins_and_variables.css.scss";
+
+h2{
+  color: $header_color;
+  margin-top: 0;
+}
+
+.clear{
+  clear: both;
+}

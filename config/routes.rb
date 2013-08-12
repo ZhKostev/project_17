@@ -8,7 +8,11 @@ Project17::Application.routes.draw do
 
   devise_for :admin_users
 
-  root :to => 'dashboard#index'
+  scope "/:locale" do
+    resources :articles, :only => [:index, :show]
+    get "/about_me", :as => :about_me, :to => 'pages_controller#about_me'
+  end
+  root :to => 'articles#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
