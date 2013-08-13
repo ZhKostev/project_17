@@ -17,9 +17,9 @@ gem 'tinymce-rails' #to have html editor for articles
 gem 'chosen-rails' #used for selects in admin area
 gem 'compass-rails', github: 'milgner/compass-rails', branch: 'rails4' #for chosen support
 gem 'pry' #for debug
-gem 'friendly_id', github: 'FriendlyId/friendly_id', branch: 'master' #add slugs to articles and rubrics (pretty urls)
 gem 'kaminari' #paginate records
 gem 'dalli' #to store cache
+gem "ransack", github: "ernie/ransack" #to search articles
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -32,6 +32,7 @@ end
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'quiet_assets' #not to log get requests to assets files
 end
 
 gem 'jquery-rails'

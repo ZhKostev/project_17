@@ -7,7 +7,7 @@
   <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
   <dd><%= @article.title %></dd>
   <dt><strong><%= model_class.human_attribute_name(:body) %>:</strong></dt>
-  <dd><%= truncate_html @article.body, :length => 75 %></dd>
+  <dd><%= truncate strip_tags(@article.body), :length => 75 %></dd>
   <dt><strong><%= model_class.human_attribute_name(:translation_id) %>:</strong></dt>
   <dd><%= @article.translation.try(:title) || 'has no translation' %></dd>
   <dt><strong><%= model_class.human_attribute_name(:meta_description) %>:</strong></dt>

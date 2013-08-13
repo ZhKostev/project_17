@@ -1,0 +1,15 @@
+<% @articles.each do |article| %>
+    <div class="article_container">
+      <h3><%= article.title %></h3>
+      <% if article.rubrics.any? %>
+          <% article.rubrics.each do |rubric| %>
+              <div class="article_rubric">
+                <%= rubric.title %>
+              </div>
+          <% end %>
+          <div class="clear"></div>
+      <% end %>
+      <%= truncate(strip_tags(article.body), :length => 550, :omission => "...") -%>
+      <%= link_to t('read_more'), article_path(article) if strip_tags(article.body).length > 550 %>
+    </div>
+<% end %>

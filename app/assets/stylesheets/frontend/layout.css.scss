@@ -14,7 +14,7 @@ html, body {
   height: $header_height;
   background-color: $header_color;
   position: absolute;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid $text_on_header_color;
 }
 
 #header_inner{
@@ -29,7 +29,7 @@ html, body {
   margin-top: 20px;
   font-size: 30px;
   font-weight: 600;
-  color: white;
+  color: $text_on_header_color;
 }
 
 #site_menu{
@@ -37,7 +37,7 @@ html, body {
   margin-top: 30px;
   .menu_links{
     font-size: 18px;
-    color: #fff;
+    color: $text_on_header_color;
     text-decoration: none;
     display: inline-block;
     margin-right: 20px;
@@ -85,7 +85,6 @@ html, body {
 }
 
 #right_part{
-  width: 22%;
-  padding: 3% 4%;
+  width: 30%;
   float: right;
 }

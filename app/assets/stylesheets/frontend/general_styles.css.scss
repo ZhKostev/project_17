@@ -1,7 +1,7 @@
 /*Contain styles for generals elements such as headers, paragraph etc*/
 @import "mixins_and_variables.css.scss";
 
-h2{
+h2, h3{
   color: $header_color;
   margin-top: 0;
 }
@@ -14,4 +14,14 @@ p{
 
 .clear{
   clear: both;
+}
+
+a{
+  color: $header_color;
+  &:visited{
+    color: #f2a097;
+  }
+  &:hover{
+    text-decoration: none;
+  }
 }

@@ -1,0 +1,27 @@
+/*Contains styles for article index and show page*/
+
+@import "mixins_and_variables.css.scss";
+
+.article_container{
+  margin-bottom: 25px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  h3{
+    margin-bottom: 5px;
+  }
+  .article_rubric{
+    margin-right: 10px;
+    background-color: $header_color;
+    color: $text_on_header_color;
+    float: left;
+    padding: 2px 5px;
+    font-size: 0.8em;
+    margin-bottom: 10px;
+  }
+}
+
+#search_form_container{
+  background-color: #ea6153;
+  height: 100px;
+  width: 100%;
+}

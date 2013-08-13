@@ -1,9 +1,11 @@
 GIT
-  remote: git://github.com/FriendlyId/friendly_id.git
-  revision: cc5ce00077b168523a95b195d9911e5576e6489f
-  branch: master
+  remote: git://github.com/ernie/ransack.git
+  revision: be7c227a9547a359691258b0b10fb1842ae8de41
   specs:
-    friendly_id (5.0.0.alpha1)
+    ransack (1.0.0)
+      actionpack (>= 3.0)
+      activerecord (>= 3.0)
+      polyamorous (~> 0.6.0)
 
 GIT
   remote: git://github.com/milgner/compass-rails.git
@@ -102,11 +104,15 @@ GEM
     multi_json (1.7.7)
     mysql2 (0.3.13)
     orm_adapter (0.4.0)
+    polyamorous (0.6.3)
+      activerecord (>= 3.0)
     polyglot (0.3.3)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
       slop (~> 3.4)
+    quiet_assets (1.0.2)
+      railties (>= 3.1, < 5.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -187,13 +193,14 @@ DEPENDENCIES
   dalli
   devise
   factory_girl_rails
-  friendly_id!
   jquery-rails
   kaminari
   less-rails
   mysql2
   pry
+  quiet_assets
   rails
+  ransack!
   rspec-rails
   sass-rails
   simple_form
