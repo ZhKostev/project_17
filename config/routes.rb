@@ -11,6 +11,7 @@ Project17::Application.routes.draw do
   scope "/:locale" do
     resources :articles, :only => [:index, :show]
     get "/about_me", :as => :about_me, :to => 'pages_controller#about_me'
+    get "/", :to => 'articles#index'
   end
   root :to => 'articles#index'
 

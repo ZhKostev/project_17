@@ -13,7 +13,7 @@
       <%= t(:site_name) %>
     </div>
     <div id="site_menu">
-      <%= link_to t(:home), root_path, :class => 'menu_links' %>
+      <%= link_to t(:home), "/#{I18n.locale if I18n.locale != I18n.default_locale}", :class => 'menu_links' %>
       <%= link_to t(:about_me), about_me_path, :class => 'menu_links', :id => 'last_menu_link' %>
     </div>
   </div>
