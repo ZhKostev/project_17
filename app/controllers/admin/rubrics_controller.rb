@@ -44,7 +44,7 @@ class Admin::RubricsController < Admin::BaseController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_rubric
-    @rubric = Rubric.friendly.find(params[:id])
+    @rubric = Rubric.find(params[:id])
   end
 
   # Only allow a trusted parameter "white list" through.

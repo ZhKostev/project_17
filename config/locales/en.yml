@@ -2,4 +2,9 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  site_name: ZhK's blog
+  home: Blog
+  about_me: About me
+  read_more: Read more
+  rubrics:
+    rubrics_list: Rubrics

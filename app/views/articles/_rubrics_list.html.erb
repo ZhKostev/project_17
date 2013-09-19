@@ -1,0 +1,9 @@
+<div id="rubrics_list_title">
+  <%= t('rubrics.rubrics_list') %> :
+</div>
+
+<% @rubrics.each do |rubric| %>
+    <div class="rubric_cont">
+      <%= link_to rubric.title, articles_path({:rubric_id => rubric.id}.merge(:q => params[:q])), :class => 'rubric_a' %>
+    </div>
+<% end %>
