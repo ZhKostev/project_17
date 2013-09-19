@@ -10,12 +10,13 @@ class ArticlesController < ApplicationController
   end
 
   def show
-
+    @search_articles = Article.search()
+    @rubrics = @article.rubrics
   end
 
   private
 
   def set_article
-    @article = Article.friendly.find(params[:id])
+    @article = Article.includes(:rubrics).find(params[:id])
   end
 end

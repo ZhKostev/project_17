@@ -2,9 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 gem 'mysql2'
 
 gem 'therubyracer' # to support twitter-bootstrap-rails
@@ -20,6 +17,9 @@ gem 'pry' #for debug
 gem 'kaminari' #paginate records
 gem 'dalli' #to store cache
 gem "ransack", github: "ernie/ransack" #to search articles
+gem "coderay"  #to highlight ruby syntax
+gem "RedCloth" #to highlight ruby syntax
+
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -1,0 +1,15 @@
+<% content_for :left_part do %>
+    <div id="article_show_container">
+      <h2><%= @article.title %></h2>
+       <%= coderay_wrapper(@article.body)  %>
+    </div>
+<% end %>
+
+<% content_for :right_part do %>
+    <%= render :partial => 'articles/search_form' %>
+    <%= render :partial => 'articles/rubrics_list' %>
+<% end %>
+
+<% content_for :bottom do %>
+    <%= render :partial => 'common/scroll_up_button' %>
+<% end %>

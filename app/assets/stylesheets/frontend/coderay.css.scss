@@ -1,0 +1,56 @@
+.CodeRay {
+  background-color: #232323;
+  border: 1px solid black;
+  font-family: 'Courier New', 'Terminal', monospace;
+  color: #E6E0DB;
+  overflow: auto;
+  font-size: 12px;
+  display: inline-block;
+  padding: 0 15px 10px;
+  line-height: 100%;
+  width: 90%;
+  pre {
+    margin: 0px;
+    padding: 0px;
+  }
+  .code{
+    margin: -10px 0;
+  }
+
+  .an { color:#E7BE69 }                      /* html attribute */
+  .c  { color:#BC9358; font-style: italic; } /* comment */
+  .ch { color:#509E4F }                      /* escaped character */
+  .cl { color:#FFF }                         /* class */
+  .co { color:#FFF }                         /* constant */
+  .fl { color:#A4C260 }                      /* float */
+  .fu { color:#FFC56D }                      /* function */
+  .gv { color:#D0CFFE }                      /* global variable */
+  .i  { color:#A4C260 }                      /* integer */
+  .il { background:#151515 }                 /* inline code */
+  .iv { color:#D0CFFE }                      /* instance variable */
+  .pp { color:#E7BE69 }                      /* doctype */
+  .r  { color:#CB7832 }                      /* keyword */
+  .rx { color:#A4C260 }                      /* regex */
+  .s  { color:#A4C260 }                      /* string */
+  .sy { color:#6C9CBD }                      /* symbol */
+  .ta { color:#E7BE69 }                      /* html tag */
+  .pc { color:#6C9CBD }                      /* boolean */
+
+  .attribute { color:#E7BE69 }
+  .comment  { color:#BC9358; font-style: italic; }
+  .escaped { color:#509E4F }
+  .constant, .class  { color:#E32424; }
+  .float { color:#A4C260 }
+  .function { color:#FFC56D }
+  .global { color:#D0CFFE }
+  .integer  { color:#A4C260 }
+  .inline { background:#151515 }
+  .instance { color:#D0CFFE }
+  .doctype { color:#E7BE69 }
+  .keyword  { color:#CB7832 }
+  .regex { color:#A4C260 }
+  .string, .char  { color:#A4C260 }
+  .symbol { color:#6C9CBD }
+  .tag { color:#E7BE69 }
+  .boolean, .predefined-constant { color:#6C9CBD }
+}

@@ -4,6 +4,7 @@
 
 <% @rubrics.each do |rubric| %>
     <div class="rubric_cont">
-      <%= link_to rubric.title, articles_path({:rubric_id => rubric.id}.merge(:q => params[:q])), :class => 'rubric_a' %>
+      <%= link_to rubric.title + (params[:rubric_id].to_i == rubric.id ? "  [#{t('rubrics.rubrics_select')}]" : ''),
+                  articles_path({:rubric_id => rubric.id}.merge(:q => params[:q])), :class => 'rubric_a' %>
     </div>
 <% end %>
