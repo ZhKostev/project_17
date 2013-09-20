@@ -42,11 +42,20 @@ html, body {
     text-decoration: none;
     display: inline-block;
     margin-right: 20px;
+    vertical-align: top;
   }
   .menu_links:hover{
     color:#ccc
   }
-  #last_menu_link{
+  #russian_lang{
+    background: url(asset_path('flag_sprite.png')) 0 0;
+    width: 24px;
+    height: 20px;
+  }
+  #english_lang{
+    background: url(asset_path('flag_sprite.png')) 24px 0;
+    width: 24px;
+    height: 20px;
     margin-right: 5px;
   }
 }
