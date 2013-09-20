@@ -10,7 +10,10 @@ gem 'twitter-bootstrap-rails' #design for admin part
 gem 'devise' #authentication
 gem 'simple_form' #form builder admin part
 gem 'truncate_html' #to truncate text with html tags
-gem 'tinymce-rails' #to have html editor for articles
+gem "ckeditor" #to have html editor for articles
+gem "carrierwave" #to save images
+gem "mini_magick" #to crop images
+
 gem 'chosen-rails' #used for selects in admin area
 gem 'compass-rails', github: 'milgner/compass-rails', branch: 'rails4' #for chosen support
 gem 'pry' #for debug

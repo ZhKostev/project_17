@@ -1,5 +1,6 @@
 Project17::Application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
   namespace :admin do
     resources 'dashboard', :only => [:index]
     resources :rubrics
@@ -13,6 +14,7 @@ Project17::Application.routes.draw do
     get "/about_me", :as => :about_me, :to => 'pages#about_me'
     get "/", :to => 'articles#index'
   end
+
   root :to => 'articles#index'
 
   # The priority is based upon order of creation:

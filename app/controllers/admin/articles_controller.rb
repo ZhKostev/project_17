@@ -1,5 +1,4 @@
 class Admin::ArticlesController < Admin::BaseController
-  include TinyMCE::Rails::Helper
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :prepare_article_form, only: [:new, :edit]
 
