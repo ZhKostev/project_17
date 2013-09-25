@@ -4,7 +4,12 @@
 ru:
   site_name: ZhK's blog
   home: Блог
-  about_me: Обо мне
+  about_me:
+    title: Обо мне
+    experience: 'Мой опыт'
+    experience_time: '2+ лет'
+    months: месяцев
+    responsibilities: Сфера тейтельности
   read_more: Далее
   rubrics:
     rubrics_list: Рубрики

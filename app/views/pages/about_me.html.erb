@@ -1,0 +1,11 @@
+<% content_for :left_part do %>
+<% end %>
+
+<% content_for :right_part do %>
+    <div class="right_title">
+      <%= t('about_me.experience') %> :
+    </div>
+    <div class="right_text">
+      <%= t('about_me.experience_time') %> (<%= (Date.today - Date.parse('11/05/2011')).to_i / 30 %> <%= t('about_me.months') %>)
+    </div>
+<% end %>
