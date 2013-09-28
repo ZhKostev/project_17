@@ -2,6 +2,10 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 ru:
+  devise:
+    sessions:
+      admin_user:
+        signed_in: Авторизация пройдена успешно
   site_name: ZhK's blog
   home: Блог
   about_me:

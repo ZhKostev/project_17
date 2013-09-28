@@ -36,6 +36,9 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'quiet_assets' #not to log get requests to assets files
+  gem 'capistrano' #to setup deploy
+  gem 'capistrano-ext' #to setup deploy
+  gem 'rvm-capistrano' #to setup deploy
 end
 
 gem 'jquery-rails'

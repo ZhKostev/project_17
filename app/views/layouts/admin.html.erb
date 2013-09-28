@@ -32,6 +32,7 @@
               <li><%= link_to 'Rubrics', admin_rubrics_path  %></li>
               <li><%= link_to 'Articles', admin_articles_path  %></li>
             </ul>
+            <%= link_to 'Sign Out', destroy_admin_user_session_path, :method => :delete, :style => 'float:right; line-height: 40px;' %>
           </div><!--/.nav-collapse -->
         </div>
       </div>
