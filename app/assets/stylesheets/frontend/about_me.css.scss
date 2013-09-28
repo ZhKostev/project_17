@@ -1,0 +1,71 @@
+/*Contains styles for About page*/
+
+@import "mixins_and_variables.css.scss";
+
+#my_photos{
+  width: 240px  !important;
+  height: 360px !important;
+  -webkit-box-shadow: 0px 0px 13px 5px rgba(50, 50, 53, 0.75);
+  -moz-box-shadow:    0px 0px 13px 5px rgba(50, 50, 53, 0.75);
+  box-shadow:         0px 0px 13px 5px rgba(50, 50, 53, 0.75);
+  .slidesjs-navigation{
+    display: none !important;
+  }
+  float: left;
+  margin-bottom: 15px;
+}
+
+#my_description{
+  float: left;
+  margin-left: 30px;
+  #my_name{
+    font-size: 150%;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+}
+
+.social_link{
+  display: block;
+  margin: 10px 0;
+  height: 32px;
+  padding-left: 40px;
+  line-height: 32px;
+}
+
+#linked_in{
+  background: url(asset_path('social_icons_sprite.png')) 0 0 no-repeat;
+}
+
+#stackoverflow{
+  background: url(asset_path('social_icons_sprite.png')) 0 -32px no-repeat;
+  height: 30px;
+}
+#gmail{
+  background: url(asset_path('social_icons_sprite.png')) 0 -62px no-repeat;
+}
+
+#technologies{
+  #technologies_title{
+    margin: 30px 0 15px 0;
+    font-size: 130%;
+  }
+  .technologies_ul{
+    margin: 0;
+    padding-left: 20px;
+    float: left;
+    li{
+      margin: 10px 0;
+    }
+  }
+}
+
+#short_about{
+  margin-top: 10px;
+  text-align: justify;
+  #short_about_title{
+    font-size: 120%;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+}

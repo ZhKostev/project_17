@@ -6,11 +6,39 @@ ru:
   home: Блог
   about_me:
     title: Обо мне
+    full_name: Zhenya Kostev
     experience: 'Мой опыт'
     experience_time: '2+ лет'
+    experience_projects: '15+ проектов'
     months: месяцев
-    responsibilities: Сфера тейтельности
+    responsibilities: Рабочие обязанности
+    responsibilities_list:
+      development: Разработка и поддержка проектов различных уровней сложности;
+      architecture_planing: Планирование архитектуры новых проектов ли их частей;
+      optimization: Отимизация приложений;
+      communication_with_customers: Общение с заказчиками;
+      integration_with_existing_services: Итеграция с различными сервисами;
+      teaching: Обучение менее опытных сотрудников.
+    social_links:
+      linked_in:  Мой профиль
+      stackoverflow: Я на stackoverflow
+      gmail: zh.kostev@gmail.com
+    technologies:
+      title: Используемые технологии
+      ruby: Ruby(1.8.7, 1.9.2, 1.9.3, 2.0);
+      rails: Rails(from 2.2 till 4.0);
+      test: TDD;
+      myslq: Mysql;
+      redis: Redis;
+      html_css: HTML, CSS, SAAS;
+      js: jQuery, CoffeeScript;
+      os: OS Linux.
+    short_about:
+      title: О себе
+      desc: Помимо программирования люблю путешествовать, увлекаюсь походами и активным отдыхом. Интересуюсь историей, социологией, экономикой, ораторским исскуством, иженерным делом и программированием микроконтроллеров.
   read_more: Далее
+  back_to_article: Перейти к версии на английском языке
+  translation_not_found: К сожалению у нанной записи нет перевода на русский язык.
   rubrics:
     rubrics_list: Рубрики
     rubrics_select: Текущая

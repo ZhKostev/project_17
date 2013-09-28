@@ -1,7 +1,11 @@
 <% content_for :left_part do %>
     <div id="article_show_container">
-      <h2><%= @article.title %></h2>
-       <%= coderay_wrapper(@article.body)  %>
+      <% if @translation_not_found %>
+           <div id="translation_not_found"><%= t('translation_not_found') %> <br/><%= link_to t('back_to_article'), article_path(@article, :locale => @article.language) %></div>
+      <% else %>
+          <h2><%= @article.title %></h2>
+          <%= coderay_wrapper(@article.body) %>
+      <% end %>
     </div>
 <% end %>
 

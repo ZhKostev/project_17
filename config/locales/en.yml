@@ -4,7 +4,40 @@
 en:
   site_name: ZhK's blog
   home: Blog
-  about_me: About me
+  about_me:
+    title: About me
+    full_name: Zhenya Kostev
+    experience: My experience
+    experience_time: '2+ years'
+    experience_projects: '15+ projects'
+    months: months
+    responsibilities: Responsibilities
+    responsibilities_list:
+      development: Development and support different types of projects;
+      architecture_planing: Architecture planing;
+      optimization: App optimization;
+      communication_with_customers: Communication with customers;
+      integration_with_existing_services: Integration with various services;
+      teaching: New developers training.
+    social_links:
+      linked_in:  My profile
+      stackoverflow: I'm on stackoverflow
+      gmail: zh.kostev@gmail.com
+    technologies:
+      title: Technologies
+      ruby: Ruby(1.8.7, 1.9.2, 1.9.3, 2.0);
+      rails: Rails(from 2.2 till 4.0);
+      test: TDD;
+      myslq: Mysql;
+      redis: Redis;
+      html_css: HTML, CSS, SAAS;
+      js: jQuery, CoffeeScript;
+      os: OS Linux.
+    short_about:
+      title: About me
+      desc: Besides programming, I love traveling, fond of hiking and outdoor activities. I have interests in history, sociology, economics, oratory arts, engineering and microcontroller systems.
   read_more: Read more
+  back_to_article: Go to russian version
+  translation_not_found: Sorry, but translation couldn't be found.
   rubrics:
     rubrics_list: Rubrics

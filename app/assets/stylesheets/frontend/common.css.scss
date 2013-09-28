@@ -1,0 +1,22 @@
+@import "mixins_and_variables.css.scss";
+
+.right_title{
+  color: $text_on_header_color;
+  font-size: 130%;
+  font-weight: bold;
+  margin: 15px 0 0 15px;
+}
+
+
+.right_text{
+  margin: 5px 0 5px 20px;
+  color: $text_on_header_color;
+  .right_list{
+    padding-left: 10px;
+    padding-right: 25px;
+    margin: 0;
+    li{
+      margin: 5px 0;
+    }
+  }
+}

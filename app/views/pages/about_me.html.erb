@@ -1,4 +1,42 @@
 <% content_for :left_part do %>
+
+    <div id="my_photos">
+      <%= image_tag('slider/1.png', :style => 'display:none;') %>
+      <%= image_tag('slider/2.png', :style => 'display:none;') %>
+      <%= image_tag('slider/3.png', :style => 'display:none;') %>
+      <%= image_tag('slider/4.png', :style => 'display:none;') %>
+    </div>
+
+    <div id="my_description">
+      <div id="my_name">
+        <%= t('about_me.full_name') %>
+      </div>
+      <div id="social_links">
+        <%= link_to t('about_me.social_links.linked_in'), 'http://www.linkedin.com/in/zhkostev', :class => 'social_link', :id => 'linked_in' %>
+        <%= link_to t('about_me.social_links.stackoverflow'), 'http://stackoverflow.com/users/1956064/zh-kostev', :class => 'social_link', :id => 'stackoverflow' %>
+        <%= link_to t('about_me.social_links.gmail'), 'mailto:zh.kostev@gmail.com', :class => 'social_link', :id => 'gmail' %>
+      </div>
+      <div id="technologies">
+        <div id="technologies_title"><%= t('about_me.technologies.title') %></div>
+        <ul class="technologies_ul">
+          <li><%= t('about_me.technologies.ruby') %></li>
+          <li><%= t('about_me.technologies.rails') %></li>
+          <li><%= t('about_me.technologies.myslq') %></li>
+          <li><%= t('about_me.technologies.redis') %></li>
+        </ul>
+        <ul class="technologies_ul">
+          <li><%= t('about_me.technologies.html_css') %></li>
+          <li><%= t('about_me.technologies.js') %></li>
+          <li><%= t('about_me.technologies.test') %></li>
+          <li><%= t('about_me.technologies.os') %></li>
+        </ul>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <div id="short_about">
+      <div id="short_about_title"><%= t('about_me.short_about.title') %></div>
+      &nbsp;&nbsp;&nbsp;&nbsp;<%= t('about_me.short_about.desc') %>
+    </div>
 <% end %>
 
 <% content_for :right_part do %>
@@ -6,6 +44,22 @@
       <%= t('about_me.experience') %> :
     </div>
     <div class="right_text">
-      <%= t('about_me.experience_time') %> (<%= (Date.today - Date.parse('11/05/2011')).to_i / 30 %> <%= t('about_me.months') %>)
+      <%= t('about_me.experience_time') %>
+      (<%= (Date.today - Date.parse('11/05/2011')).to_i / 30 %> <%= t('about_me.months') %>)
+      [<%= t('about_me.experience_projects') %>]
+    </div>
+
+    <div class="right_title">
+      <%= t('about_me.responsibilities') %> :
+    </div>
+    <div class="right_text">
+      <ul class="right_list">
+        <li><%= t('about_me.responsibilities_list.development') %></li>
+        <li><%= t('about_me.responsibilities_list.architecture_planing') %></li>
+        <li><%= t('about_me.responsibilities_list.optimization') %></li>
+        <li><%= t('about_me.responsibilities_list.communication_with_customers') %></li>
+        <li><%= t('about_me.responsibilities_list.integration_with_existing_services') %></li>
+        <li><%= t('about_me.responsibilities_list.teaching') %></li>
+      </ul>
     </div>
 <% end %>

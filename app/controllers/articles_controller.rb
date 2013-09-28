@@ -18,5 +18,9 @@ class ArticlesController < ApplicationController
 
   def set_article
     @article = Article.includes(:rubrics).find(params[:id])
+    if @article.language.to_sym != I18n.locale
+      @translation_not_found = @article.translation.nil?
+      @article = @article.translation if @article.translation
+    end
   end
 end
