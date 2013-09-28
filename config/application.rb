@@ -42,7 +42,6 @@ module Project17
     config.assets.precompile += ['admin.js']
     config.assets.precompile += ['admin.css']
     config.assets.precompile += ['ckeditor/*']
-    config.assets.precompile += Ckeditor.assets
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
 

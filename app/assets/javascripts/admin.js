@@ -14,6 +14,5 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require chosen-jquery
-//= require ckeditor/ckeditor
-//= require ./admin/ckeditor_fix
+//= require ckeditor/init
 //= require_tree ./admin
