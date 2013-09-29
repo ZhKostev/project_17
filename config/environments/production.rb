@@ -63,4 +63,18 @@ Project17::Application.configure do
 
   config.eager_load = true
 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      address: 'smtp.gmail.com',
+      port: 587,
+      domain: 'gmail.com',
+      user_name: 'kostev.no.reply',
+      password: 'qwe123QWE',
+      authentication: 'plain',
+      enable_starttls_auto: true}
+
+  config.middleware.use ExceptionNotification::Rack,
+                        :email => {:email_prefix => "[Exception on Production] ",
+                                   :sender_address => %{"notifier" <kostev.no.reply@gmail.com>},
+                                   :exception_recipients => %w{zh.kostev@gmail.com mustang1365@mail.ru}}
 end
