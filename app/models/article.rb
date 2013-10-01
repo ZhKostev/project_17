@@ -7,4 +7,6 @@ class Article < ActiveRecord::Base
   accepts_nested_attributes_for :rubrics
 
   scope :with_rubric, lambda {|rubric_id| joins(:rubrics).where('rubrics.id = ?', rubric_id)}
+  scope :published, -> {where(:published =>true)}
+
 end

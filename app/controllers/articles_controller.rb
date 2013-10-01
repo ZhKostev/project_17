@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
 
   def index
     search_params = params[:rubric_id] ? (params[:q] || {}).merge(:rubrics_id_eq => params[:rubric_id]) : params[:q]
-    @search_articles = Article.for_language(I18n.locale).order('updated_at DESC').search(search_params)
+    @search_articles = Article.published.for_language(I18n.locale).order('updated_at DESC').search(search_params)
     all_articles = @search_articles.result(distinct: true).includes(:rubrics)
     @articles = all_articles.page(params[:page])
     @rubrics = Rubric.select('DISTINCT rubrics.*').for_articles(all_articles)
