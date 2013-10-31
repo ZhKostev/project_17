@@ -1,19 +1,18 @@
 GIT
+  remote: git://github.com/Compass/compass-rails.git
+  revision: aea69635f6000bbc7180f7fdd0ce216f904db30d
+  specs:
+    compass-rails (2.0.alpha.0)
+      compass (>= 0.12.2, < 0.14)
+
+GIT
   remote: git://github.com/ernie/ransack.git
-  revision: 3250d339bed60ae6c152e5c1827e13aab72dd8be
+  revision: 63b52638867923cee89c91a92770131608116906
   specs:
     ransack (1.0.0)
       actionpack (>= 3.0)
       activerecord (>= 3.0)
       polyamorous (~> 0.6.0)
-
-GIT
-  remote: git://github.com/milgner/compass-rails.git
-  revision: c86e7fd9c2605c80816a2f64a3fb8b7c3a09e494
-  branch: rails4
-  specs:
-    compass-rails (1.0.3)
-      compass (>= 0.12.2, < 0.14)
 
 GEM
   remote: https://rubygems.org/
@@ -43,7 +42,7 @@ GEM
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
-    arel (4.0.0)
+    arel (4.0.1)
     atomic (1.1.14)
     bcrypt-ruby (3.1.2)
     builder (3.1.4)
@@ -59,19 +58,19 @@ GEM
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
       json (>= 1.7)
-    chosen-rails (1.0.0)
+    chosen-rails (1.0.1)
       coffee-rails (>= 3.2)
       compass-rails (>= 1.0)
       railties (>= 3.0)
       sass-rails (>= 3.2)
-    chunky_png (1.2.8)
+    chunky_png (1.2.9)
     ckeditor (4.0.6)
       mime-types
       orm_adapter
     coderay (1.1.0)
-    coffee-rails (4.0.0)
+    coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
-      railties (>= 4.0.0.beta, < 5.0)
+      railties (>= 4.0.0, < 5.0)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
@@ -82,7 +81,7 @@ GEM
       fssm (>= 0.2.7)
       sass (~> 3.1)
     dalli (2.6.4)
-    devise (3.1.0)
+    devise (3.1.1)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
@@ -90,23 +89,30 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.2.4)
     erubis (2.7.0)
-    exception_notification (4.0.1)
+    eventmachine (1.0.3)
+    exception_notification (3.0.0)
       actionmailer (>= 3.0.4)
-      activesupport (>= 3.0.4)
+      tinder (~> 1.8)
     execjs (2.0.2)
     factory_girl (4.2.0)
       activesupport (>= 3.0.0)
     factory_girl_rails (4.2.1)
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
+    faraday (0.8.8)
+      multipart-post (~> 1.2.0)
+    faraday_middleware (0.9.0)
+      faraday (>= 0.7.4, < 0.9)
     fssm (0.2.10)
-    highline (1.6.19)
+    hashie (2.0.5)
+    highline (1.6.20)
     hike (1.2.3)
+    http_parser.rb (0.5.3)
     i18n (0.6.5)
     jquery-rails (3.0.4)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    json (1.8.0)
+    json (1.8.1)
     kaminari (0.14.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -124,7 +130,8 @@ GEM
     mini_magick (3.6.0)
       subexec (~> 0.2.1)
     minitest (4.7.5)
-    multi_json (1.8.0)
+    multi_json (1.8.2)
+    multipart-post (1.2.0)
     mysql2 (0.3.13)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
@@ -133,6 +140,7 @@ GEM
     net-ssh (2.7.0)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
+    newrelic_rpm (3.6.8.168)
     orm_adapter (0.4.0)
     polyamorous (0.6.4)
       activerecord (>= 3.0)
@@ -162,10 +170,10 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.1.0)
     ref (1.0.5)
-    rspec-core (2.14.5)
+    rspec-core (2.14.7)
     rspec-expectations (2.14.3)
       diff-lcs (>= 1.1.3, < 2.0)
-    rspec-mocks (2.14.3)
+    rspec-mocks (2.14.4)
     rspec-rails (2.14.0)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
@@ -175,24 +183,25 @@ GEM
       rspec-mocks (~> 2.14.0)
     ruby_parser (3.2.2)
       sexp_processor (~> 4.1)
-    rvm-capistrano (1.5.0)
-      capistrano (>= 2.15.4)
-    sass (3.2.11)
-    sass-rails (4.0.0)
-      railties (>= 4.0.0.beta, < 5.0)
+    rvm-capistrano (1.5.1)
+      capistrano (~> 2.15.4)
+    sass (3.2.12)
+    sass-rails (4.0.1)
+      railties (>= 4.0.0, < 5.0)
       sass (>= 3.1.10)
       sprockets-rails (~> 2.0.0)
-    sexp_processor (4.3.0)
+    sexp_processor (4.4.0)
     simple_form (3.0.0)
       actionpack (>= 4.0.0, < 4.1)
       activemodel (>= 4.0.0, < 4.1)
+    simple_oauth (0.1.9)
     slop (2.1.0)
     sprockets (2.10.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    sprockets-rails (2.0.0)
+    sprockets-rails (2.0.1)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
@@ -204,6 +213,15 @@ GEM
     thread_safe (0.1.3)
       atomic
     tilt (1.4.1)
+    tinder (1.9.3)
+      eventmachine (~> 1.0)
+      faraday (~> 0.8)
+      faraday_middleware (~> 0.9)
+      hashie (>= 1.0, < 3)
+      json (~> 1.8.0)
+      mime-types (~> 1.19)
+      multi_json (~> 1.7)
+      twitter-stream (~> 0.1)
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
@@ -213,10 +231,14 @@ GEM
       execjs
       rails (>= 3.1)
       railties (>= 3.1)
-    tzinfo (0.3.37)
-    uglifier (2.2.1)
+    twitter-stream (0.1.16)
+      eventmachine (>= 0.12.8)
+      http_parser.rb (~> 0.5.1)
+      simple_oauth (~> 0.1.4)
+    tzinfo (0.3.38)
+    uglifier (2.3.0)
       execjs (>= 0.3.0)
-      multi_json (~> 1.0, >= 1.0.2)
+      json (>= 1.8.0)
     warden (1.2.3)
       rack (>= 1.0)
 
@@ -242,6 +264,7 @@ DEPENDENCIES
   less-rails
   mini_magick
   mysql2
+  newrelic_rpm
   pry
   quiet_assets
   rails

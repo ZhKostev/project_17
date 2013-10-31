@@ -49,7 +49,8 @@ class Admin::ArticlesController < Admin::BaseController
 
   # Only allow a trusted parameter "white list" through.
   def article_params
-    params.require(:article).permit(:title, :body, :translation_id, :meta_description, :published, :language,{:rubric_ids => []})
+    params.require(:article).permit(:title, :body, :translation_id, :meta_description, :published,
+                                    :language, :short_description, {:rubric_ids => []})
   end
 
   #Private. Set all variables for form. 

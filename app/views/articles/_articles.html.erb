@@ -7,7 +7,7 @@
           <% end %>
           <div class="clear"></div>
       <% end %>
-      <%= truncate(strip_tags(article.body), :length => 550, :omission => "...") -%>
+      <%= truncate(strip_tags(article.show_body), :length => 550, :omission => "...") -%>
       <%= link_to t('read_more'), article_path(article) if strip_tags(article.body).length > 550 %>
     </div>
 <% end %>

@@ -6,6 +6,7 @@
 
     <%= f.input :rubric_ids, :as => :select, :collection => @article_rubrics, :label => 'Rubrics', :input_html => {:multiple => true} %>
 
+    <%= f.input :short_description, :input_html => {:style => 'width:855px; height:100px'}%>
     <%= f.input :body, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} } %>
 
     <%= f.input :published %>

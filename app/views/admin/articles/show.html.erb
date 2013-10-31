@@ -7,11 +7,11 @@
   <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
   <dd><%= @article.title %></dd>
   <dt><strong><%= model_class.human_attribute_name(:body) %>:</strong></dt>
-  <dd><%= truncate strip_tags(@article.body), :length => 75 %></dd>
+  <dd><%= truncate strip_tags(@article.body).presence || 'BLANK BODY!!!', :length => 75 %></dd>
   <dt><strong><%= model_class.human_attribute_name(:translation_id) %>:</strong></dt>
   <dd><%= @article.translation.try(:title) || 'has no translation' %></dd>
   <dt><strong><%= model_class.human_attribute_name(:meta_description) %>:</strong></dt>
-  <dd><%= @article.meta_description %></dd>
+  <dd><%= @article.meta_description.presence || 'has no meta description' %></dd>
   <dt><strong><%= model_class.human_attribute_name(:published) %>:</strong></dt>
   <dd><%= @article.published %></dd>
 </dl>

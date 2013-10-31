@@ -15,7 +15,7 @@ gem "carrierwave" #to save images
 gem "mini_magick" #to crop images
 
 gem 'chosen-rails' #used for selects in admin area
-gem 'compass-rails', github: 'milgner/compass-rails', branch: 'rails4' #for chosen support
+gem 'compass-rails', github: 'Compass/compass-rails'
 gem 'pry' #for debug
 gem 'kaminari' #paginate records
 gem 'dalli' #to store cache
@@ -43,4 +43,5 @@ group :development, :test do
 end
 
 gem 'jquery-rails'
+gem 'newrelic_rpm'
 

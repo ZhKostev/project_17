@@ -9,4 +9,12 @@ class Article < ActiveRecord::Base
   scope :with_rubric, lambda {|rubric_id| joins(:rubrics).where('rubrics.id = ?', rubric_id)}
   scope :published, -> {where(:published =>true)}
 
+
+  #Public. Method to define what would be shown on front article index
+  #
+  #Returns text
+  #
+  def show_body
+    short_description.presence || body
+  end
 end
