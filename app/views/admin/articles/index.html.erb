@@ -7,6 +7,7 @@
     <tr>
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:translation_id) %></th>
+      <th><%= model_class.human_attribute_name(:language) %></th>
       <th><%= model_class.human_attribute_name(:published) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -17,6 +18,7 @@
       <tr>
         <td><%= link_to article.title, admin_article_path(article) %></td>
         <td><%= article.translation.present? ? link_to(article.translation.title, admin_rubric_path(article.translation)) : 'without translation' %></td>
+        <td><%= article.language.to_s.upcase %></td>
         <td><%= article.published.to_s.humanize %></td>
         <td><%=l article.created_at %></td>
         <td>
