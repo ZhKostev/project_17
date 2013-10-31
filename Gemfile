@@ -23,7 +23,7 @@ gem "ransack", github: "ernie/ransack" #to search articles
 gem "coderay"  #to highlight ruby syntax
 gem "RedCloth" #to highlight ruby syntax
 
-gem 'exception_notification' #handle errors on prod
+gem 'exception_notification', '3.0.0' #handle errors on prod
 
 # Gems used only for assets and not required
 # in production environments by default.

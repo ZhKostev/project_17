@@ -72,9 +72,9 @@ Project17::Application.configure do
       password: 'qwe123QWE',
       authentication: 'plain',
       enable_starttls_auto: true}
-
-  config.middleware.use ExceptionNotification::Rack,
-                        :email => {:email_prefix => "[Exception on Production] ",
-                                   :sender_address => %{"notifier" <kostev.no.reply@gmail.com>},
-                                   :exception_recipients => %w{zh.kostev@gmail.com mustang1365@mail.ru}}
 end
+
+Project17::Application.config.middleware.use ExceptionNotifier,
+                      :email_prefix => "[Exception on Production] ",
+                                 :sender_address => %{"notifier" <kostev.no.reply@gmail.com>},
+                                 :exception_recipients => %w{zh.kostev@gmail.com mustang1365@mail.ru}

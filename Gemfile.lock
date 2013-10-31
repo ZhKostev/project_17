@@ -257,7 +257,7 @@ DEPENDENCIES
   compass-rails!
   dalli
   devise
-  exception_notification
+  exception_notification (= 3.0.0)
   factory_girl_rails
   jquery-rails
   kaminari
