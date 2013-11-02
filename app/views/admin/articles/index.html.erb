@@ -17,7 +17,7 @@
     <% @articles.each do |article| %>
       <tr>
         <td><%= link_to article.title, admin_article_path(article) %></td>
-        <td><%= article.translation.present? ? link_to(article.translation.title, admin_rubric_path(article.translation)) : 'without translation' %></td>
+        <td><%= article.translation.present? ? link_to(article.translation.title, admin_article_path(article.translation)) : 'without translation' %></td>
         <td><%= article.language.to_s.upcase %></td>
         <td><%= article.published.to_s.humanize %></td>
         <td><%=l article.created_at %></td>
