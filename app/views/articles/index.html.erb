@@ -1,8 +1,8 @@
 <% content_for :left_part do %>
-    <%= render :partial => 'articles' %>
+    <%= CacheManager.cache_index_page_articles(params) { render :partial => 'articles' } %>
 <% end %>
 
 <% content_for :right_part do %>
-    <%= render :partial => 'articles/search_form' %>
-    <%= render :partial => 'articles/rubrics_list' %>
+    <%= CacheManager.cache_search_form(params) { render :partial => 'articles/search_form' } %>
+    <%= CacheManager.cache_rubrics_widget(params) { render :partial => 'articles/rubrics_list' } %>
 <% end %>

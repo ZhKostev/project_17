@@ -1,19 +1,12 @@
 <% content_for :left_part do %>
-    <div id="article_show_container">
-      <% if @translation_not_found %>
-           <div id="translation_not_found"><%= t('translation_not_found') %> <br/><%= link_to t('back_to_article'), article_path(@article, :locale => @article.language) %></div>
-      <% else %>
-          <h2><%= @article.title %></h2>
-          <%= coderay_wrapper(@article.body) %>
-      <% end %>
-    </div>
+    <%= CacheManager.cache_article_show(@article) { render :partial => 'articles/show_body' } %>
 <% end %>
 
 <% content_for :right_part do %>
-    <%= render :partial => 'articles/search_form' %>
-    <%= render :partial => 'articles/rubrics_list' %>
+    <%= CacheManager.cache_search_form(params) { render :partial => 'articles/search_form' } %>
+    <%= CacheManager.cache_rubrics_for_article(@article) { render :partial => 'articles/rubrics_list' } %>
 <% end %>
 
 <% content_for :bottom do %>
-    <%= render :partial => 'common/scroll_up_button' %>
+    <%= Rails.cache.fetch("scroll_button", :expires_in => 6.month) {render :partial => 'common/scroll_up_button'}%>
 <% end %>

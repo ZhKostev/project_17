@@ -6,6 +6,13 @@ ru:
     sessions:
       admin_user:
         signed_in: Авторизация пройдена успешно
+  views:
+    pagination:
+      first: "&laquo; Первая"
+      last: "Последняя &raquo;"
+      previous: "&lsaquo; Предыдущая"
+      next: "Следующая &rsaquo;"
+      truncate: "..."
   site_name: ZhK's blog
   home: Блог
   about_me:

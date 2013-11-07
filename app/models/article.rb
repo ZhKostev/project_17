@@ -9,6 +9,7 @@ class Article < ActiveRecord::Base
   scope :with_rubric, lambda {|rubric_id| joins(:rubrics).where('rubrics.id = ?', rubric_id)}
   scope :published, -> {where(:published =>true)}
 
+  after_save :expire_article_cache
 
   #Public. Method to define what would be shown on front article index
   #
@@ -16,5 +17,9 @@ class Article < ActiveRecord::Base
   #
   def show_body
     short_description.presence || body
+  end
+
+  def expire_article_cache
+    CacheManager.expire_article_cache(self)
   end
 end

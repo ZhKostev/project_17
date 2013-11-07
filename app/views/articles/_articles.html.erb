@@ -1,13 +1,4 @@
 <% @articles.each do |article| %>
-    <div class="article_container">
-      <h3><%= link_to article.title, article_path(article), :class => 'article_title' %></h3>
-      <% if article.rubrics.any? %>
-          <% article.rubrics.each do |rubric| %>
-              <%= link_to rubric.title , articles_path({:rubric_id => rubric.id}.merge(:q => params[:q])), :class => 'article_rubric' %>
-          <% end %>
-          <div class="clear"></div>
-      <% end %>
-      <%= truncate(strip_tags(article.show_body), :length => 550, :omission => "...") -%>
-      <%= link_to t('read_more'), article_path(article) if strip_tags(article.body).length > 550 %>
-    </div>
+    <%= CacheManager.cache_article(article) {article_html(article)}.html_safe  %>
 <% end %>
+<%= paginate @articles, :params => {:controller => 'articles', :action => 'index'} %>
