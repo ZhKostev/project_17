@@ -8,5 +8,5 @@
 <% end %>
 
 <% content_for :bottom do %>
-    <%= Rails.cache.fetch("scroll_button", :expires_in => 6.month) {render :partial => 'common/scroll_up_button'}%>
+    <%= Rails.cache.fetch("scroll_button") {render :partial => 'common/scroll_up_button'}%>
 <% end %>

@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_filter :set_article, :only => [:show]
+  after_filter :store_cache, :only => [:index, :show]
 
   def index
     @articles = search_articles.result(distinct: true).includes(:rubrics).page(10).page(params[:page] || 1)

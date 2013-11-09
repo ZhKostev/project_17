@@ -45,15 +45,20 @@ class CacheManager
        end
     end
 
-
     def expire_rubric_cache(rubric)
       Rails.cache.delete 'all_rubrics'
       Rails.cache.delete 'all_rubrics_list'
       Rails.cache.delete "articles_index_#{rubric.language}"
+      Rails.cache.delete "/_global_cache"
+      Rails.cache.delete "/ru_global_cache"
+      Rails.cache.delete "/en_global_cache"
+      Rails.cache.delete "/ru/articles_global_cache"
+      Rails.cache.delete "/en/articles_global_cache"
       rubric.articles.each do |article|
         Rails.cache.delete "article_#{article.id}_rubrics"
         Rails.cache.delete "article_#{article.id}_rubrics_right_list"
         Rails.cache.delete "article_index_cache_#{article.id}"
+        Rails.cache.delete "/#{article.language}/articles/#{article.id}_global_cache"
       end
       #remove index cache for rubric
       (Article.for_language(rubric.language).count / 10 + 1).times do |page_number|
@@ -64,6 +69,10 @@ class CacheManager
     def expire_article_cache(article)
       Rails.cache.delete "article_show_for_#{article.id}"
       Rails.cache.delete "article_index_cache_#{article.id}"
+      Rails.cache.delete "/#{article.language}/articles/#{article.id}_global_cache"
+      Rails.cache.delete "/_global_cache"
+      Rails.cache.delete "/#{article.language}_global_cache"
+      Rails.cache.delete "/#{article.language}/articles_global_cache"
       language = article.language
       (Article.for_language(language).count / 10 + 1).times do |page|
         (Rubric.pluck(:id) + [nil]).each do |rubric_id|

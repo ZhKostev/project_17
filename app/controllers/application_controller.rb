@@ -10,4 +10,10 @@ class ApplicationController < ActionController::Base
   def default_url_options(options={})
     options.merge({:locale => I18n.locale})
   end
+
+  def store_cache
+    if params.except('action', 'controller', 'locale', 'id').empty? && !Rails.cache.exist?("#{request.path}_global_cache")
+      Rails.cache.write "#{request.path}_global_cache", response.body
+    end
+  end
 end
