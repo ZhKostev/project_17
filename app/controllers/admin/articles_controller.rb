@@ -3,7 +3,7 @@ class Admin::ArticlesController < Admin::BaseController
   before_action :prepare_article_form, only: [:new, :edit]
 
   def index
-    @articles = Article.all
+    @articles = Article.page(params[:page] || 1).per(5)
   end
 
   def show

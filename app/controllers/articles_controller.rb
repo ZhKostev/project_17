@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   after_filter :store_cache, :only => [:index, :show]
 
   def index
-    @articles = search_articles.result(distinct: true).includes(:rubrics).page(10).page(params[:page] || 1)
+    @articles = search_articles.result(distinct: true).includes(:rubrics).page(params[:page] || 1).per(10)
     @rubrics = fetch_rubrics
   end
 
