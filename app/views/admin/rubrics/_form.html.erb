@@ -1,4 +1,4 @@
-<%= simple_form_for @rubric, :url => admin_rubric_path(@rubric), :html => { :class => 'form-horizontal' } do |f| %>
+<%= simple_form_for [:admin, @rubric], :html => { :class => 'form-horizontal' } do |f| %>
     <%= f.error_notification %>
 
 

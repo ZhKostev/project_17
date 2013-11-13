@@ -1,4 +1,4 @@
-<%= simple_form_for @article, :html => {:class => 'form-horizontal'}, :url => admin_article_path(@article) do |f| %>
+<%= simple_form_for [:admin, @article], :html => {:class => 'form-horizontal'} do |f| %>
     <%= f.input :title %>
     <%= f.input :meta_description %>
     <%= f.input :language, :as => :select, :collection => SUPPORTED_LANGUAGES.keys.map(&:to_s), :include_blank => false %>
