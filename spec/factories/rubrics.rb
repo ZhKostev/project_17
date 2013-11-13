@@ -1,9 +1,7 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
-
+require 'faker'
 FactoryGirl.define do
   factory :rubric do
-    title "MyString"
-    language "MyString"
-    translation_id 1
+    title {Faker::Lorem.words(2)}
+    language SUPPORTED_LANGUAGES.keys.first
   end
 end

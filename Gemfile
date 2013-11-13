@@ -34,12 +34,19 @@ group :assets do
 end
 
 group :development, :test do
-  gem 'rspec-rails'
-  gem 'factory_girl_rails'
   gem 'quiet_assets' #not to log get requests to assets files
   gem 'capistrano' #to setup deploy
   gem 'capistrano-ext' #to setup deploy
   gem 'rvm-capistrano' #to setup deploy
+end
+
+group :test do
+  gem 'simplecov' #generate code coverage
+  gem 'zeus' #speed up test start
+  gem 'factory_girl_rails' #generate models for tests
+  gem 'rspec-rails' #rspec expectations for tests
+  gem 'database_cleaner' #setup database clean strategy
+  gem 'faker' #to generate fake data
 end
 
 gem 'jquery-rails'
