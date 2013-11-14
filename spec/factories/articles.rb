@@ -2,9 +2,10 @@
 require 'faker'
 FactoryGirl.define do
   factory :article do
-    title {Faker::Lorem.words(4)}
-    body Faker::Lorem.paragraphs(2)
+    title { Faker::Lorem.words(4).join(' ') }
+    body Faker::Lorem.paragraphs(2).join(' \n ')
     short_description Faker::Lorem.paragraphs(1)
     published false
+    language SUPPORTED_LANGUAGES.keys.first.to_s
   end
 end

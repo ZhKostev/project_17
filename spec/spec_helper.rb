@@ -1,10 +1,16 @@
 require 'simplecov'
-SimpleCov.start
+SimpleCov.start do
+  add_group "Controllers", "app/controllers"
+  add_group "Models", "app/models"
+  add_group "Helpers", "app/helpers"
+  add_group "Services", "app/services"
+  add_group "Middleware", "app/middleware"
+  add_group "Lib", "lib"
+end
 
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
-require 'rspec/autorun'
 require 'factory_girl'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
@@ -16,6 +22,17 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
 RSpec.configure do |config|
+
+  # Reload factories on test start if is running with zeus, cuz zeus doesn't handle factories change
+  if ENV['ZEUS_MASTER_FD']
+    config.before :all do
+      FactoryGirl.reload
+    end
+  end
+
+  config.before :all do
+    I18n.locale = :en
+  end
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
@@ -32,5 +49,8 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+
+  config.filter_run :focus => true
+  config.run_all_when_everything_filtered = true
 
 end
