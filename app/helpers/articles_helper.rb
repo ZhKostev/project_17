@@ -36,7 +36,7 @@ module ArticlesHelper
   def article_body(article)
     stripped_body = strip_tags(article.show_body)
 
-    truncate(stripped_body, :length => 550, :omission => "...  ") + link_to(t('read_more'), article_path(article))
+    truncate(stripped_body, :length => 550, :omission => "...  ") + ' ' + link_to(t('read_more'), article_path(article))
   end
 
   # Internal: Generate html for article's rubrics. Clickable boxes on article's index page
