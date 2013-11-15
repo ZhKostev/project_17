@@ -1,3 +1,1 @@
-================= Installation =============================
-1) Memcache database to store cache
-    - 'sudo apt-get install memcached'
+Test app for rails 4 ruby 2, tests and performance optimizations
