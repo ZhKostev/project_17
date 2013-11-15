@@ -11,10 +11,9 @@ class Article < ActiveRecord::Base
 
   after_save :expire_article_cache
 
-  #Public. Method to define what would be shown on front article index
+  # Public. Method to define what would be shown on front article index
   #
-  #Returns text
-  #
+  # Returns String
   def show_body
     short_description.presence || body
   end
