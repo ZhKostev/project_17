@@ -18,6 +18,7 @@ class Article < ActiveRecord::Base
     short_description.presence || body
   end
 
+  private
   def expire_article_cache
     CacheManager.expire_article_cache(self)
   end

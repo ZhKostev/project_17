@@ -1,8 +1,48 @@
 class CacheManager
   class << self
 
+    # Cache right search form
+    def cache_search_form(params)
+      if params[:q]
+        yield
+      else
+        Rails.cache.fetch CacheKey.search_form_key do
+          yield
+        end
+      end
+    end
+
+    # Cache article body html with title for articles#show page
+    def cache_article_show(article)
+      Rails.cache.fetch CacheKey.article_body_html_for_show(article) do
+        yield
+      end
+    end
+
+    # Cache right part of article show page (rubrics)
+    def cache_rubrics_for_article(article)
+      Rails.cache.fetch CacheKey.article_show_right_rubrics(article) do
+        yield
+      end
+    end
+
+    # Cache right part with all rubrics on articles#index
+    def cache_rubrics_widget(params)
+      Rails.cache.fetch CacheKey.all_rubrics do
+        yield
+      end
+    end
+
+    # Cache 1 article on article#index
+    def cache_article(article)
+      Rails.cache.fetch CacheKey.article_on_index(article) do
+        yield
+      end
+    end
+
+    # Cache one of the articles#index pages
     def cache_index_page_articles(params)
-      if (key = index_page_cache_key(params))
+      if (key = CacheKey.index_page_cache_key(params))
         Rails.cache.fetch key do
           yield
         end
@@ -11,58 +51,45 @@ class CacheManager
       end
     end
 
-    def cache_article_show(article)
-      Rails.cache.fetch "article_show_for_#{article.id}" do
-         yield
-      end
-    end
 
-    def cache_search_form(params)
-      if params[:q]
-        yield
-      else
-        Rails.cache.fetch "search_form_#{I18n.locale}" do
-          yield
-        end
-      end
-    end
 
-    def cache_rubrics_for_article(article)
-      Rails.cache.fetch "article_#{article.id}_rubrics_right_list" do
-        yield
-      end
-    end
-
-    def cache_rubrics_widget(params)
-      Rails.cache.fetch 'all_rubrics_list' do
-        yield
-      end
-    end
-
-    def cache_article(article)
-      Rails.cache.fetch "article_index_cache_#{article.id}" do
-        yield
-       end
-    end
-
+    # Public: Method will expire cache for the rubric. Method will expire
+    # - right list on index page
+    # - right array for list on index page
+    # - article index for rubric language
+    # - root page global cache if rubric language is russian
+    # - root page global cache for rubric language
+    # - article index global cache for rubric language
+    #
+    # - right rubric list for all related articles
+    # - index rubric line for all related articles
+    # - index cache for all related articles
+    # - show body cache for all related articles
+    # - show global cache for all related articles
+    # -
+    # - index cache for all possible pages for rubric language and rubric id
+    # - index cache for all possible pages for rubric language without rubric id
+    #
+    # Returns nothing
     def expire_rubric_cache(rubric)
-      Rails.cache.delete 'all_rubrics'
-      Rails.cache.delete 'all_rubrics_list'
-      Rails.cache.delete "articles_index_#{rubric.language}"
-      Rails.cache.delete "/_global_cache"
-      Rails.cache.delete "/ru_global_cache"
-      Rails.cache.delete "/en_global_cache"
-      Rails.cache.delete "/ru/articles_global_cache"
-      Rails.cache.delete "/en/articles_global_cache"
+      Rails.cache.delete CacheKey.all_rubrics(rubric.language)
+      Rails.cache.delete CacheKey.all_rubrics_array(rubric.language)
+      Rails.cache.delete CacheKey.index_page_cache_key({:locale => rubric.language})
+      Rails.cache.delete "/_global_cache" if rubric.language == I18n.default_locale.to_s
+      Rails.cache.delete "/#{rubric.language}_global_cache"
+      Rails.cache.delete "/#{rubric.language}/articles_global_cache"
+
       rubric.articles.each do |article|
-        Rails.cache.delete "article_#{article.id}_rubrics"
-        Rails.cache.delete "article_#{article.id}_rubrics_right_list"
-        Rails.cache.delete "article_index_cache_#{article.id}"
+        Rails.cache.delete CacheKey.article_show_right_rubrics(article)
+        Rails.cache.delete CacheKey.article_rubrics_line(article)
+        Rails.cache.delete CacheKey.article_on_index(article)
+        Rails.cache.delete CacheKey.article_body_html_for_show(article)
         Rails.cache.delete "/#{article.language}/articles/#{article.id}_global_cache"
       end
       #remove index cache for rubric
-      (Article.for_language(rubric.language).count / 10 + 1).times do |page_number|
-        Rails.cache.delete "articles_index_#{rubric.language}#{'_' + page_number.to_s if page_number > 0}_#{rubric.id}"
+      (Article.for_language(rubric.language).count / 10 + 2).times do |page_number|
+        Rails.cache.delete CacheKey.index_page_cache_key({:locale => rubric.language, :page => page_number})
+        Rails.cache.delete CacheKey.index_page_cache_key({:locale => rubric.language, :page => page_number, :rubric_id => rubric.id})
       end
     end
 
@@ -79,13 +106,6 @@ class CacheManager
           Rails.cache.delete "articles_index_#{language}#{'_' + page.to_s if page > 0}#{'_' + rubric_id.to_s if rubric_id}"
         end
       end
-    end
-
-    private
-
-    def index_page_cache_key(params)
-      prepared_params = params.reject{|k,v| %w(action controller locale page rubric_id).include?(k)}
-      prepared_params.any? ? nil : "articles_index_#{I18n.locale}#{'_' + params[:page] if params[:page]}#{'_' + params[:rubric_id] if params[:rubric_id]}"
     end
   end
 end

@@ -27,7 +27,7 @@ class ArticlesController < ApplicationController
   end
 
   def fetch_rubrics
-    Rails.cache.fetch 'all_rubrics' do
+    Rails.cache.fetch CacheKey.all_rubrics_array do
       Rubric.for_language(I18n.locale).inject({}){|hash, rubric| hash[rubric.id] = rubric.title; hash}
     end
   end

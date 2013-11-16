@@ -54,7 +54,7 @@ describe ArticlesHelper do
 
         it 'should fetch article truncated body and rubrics links from cache' do
           Rails.cache.write CacheKey.article_short_body(article), 'test'
-          Rails.cache.write CacheKey.article_rubric_line(article), 'test 2'
+          Rails.cache.write CacheKey.article_rubrics_line(article), 'test 2'
           helper.should_not_receive(:article_rubrics)
           helper.should_not_receive(:article_body)
           helper.article_html(article)

@@ -47,6 +47,7 @@ group :test do
   gem 'rspec-rails' #rspec expectations for tests
   gem 'database_cleaner' #setup database clean strategy
   gem 'faker' #to generate fake data
+  gem 'shoulda' #use some extra matcher for validation, associations etc
 end
 
 gem 'jquery-rails'

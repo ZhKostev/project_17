@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: git://github.com/ernie/ransack.git
-  revision: c51a7cdda5920e136b48e184450e549634dda607
+  revision: 9e87676d9f7682b9db44ce3710284452e64e113c
   specs:
     ransack (1.1.0)
       actionpack (>= 3.0)
@@ -82,7 +82,7 @@ GEM
       sass (~> 3.1)
     dalli (2.6.4)
     database_cleaner (1.2.0)
-    devise (3.2.0)
+    devise (3.2.1)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
@@ -192,6 +192,12 @@ GEM
       railties (>= 4.0.0, < 5.0)
       sass (>= 3.1.10)
       sprockets-rails (~> 2.0.0)
+    shoulda (3.5.0)
+      shoulda-context (~> 1.0, >= 1.0.1)
+      shoulda-matchers (>= 1.4.1, < 3.0)
+    shoulda-context (1.1.6)
+    shoulda-matchers (2.4.0)
+      activesupport (>= 3.0.0)
     simple_form (3.0.0)
       actionpack (>= 4.0.0, < 4.1)
       activemodel (>= 4.0.0, < 4.1)
@@ -202,7 +208,7 @@ GEM
       multi_json
       simplecov-html (~> 0.8.0)
     simplecov-html (0.8.0)
-    slop (3.4.6)
+    slop (3.4.7)
     sprockets (2.10.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -283,6 +289,7 @@ DEPENDENCIES
   rspec-rails
   rvm-capistrano
   sass-rails
+  shoulda
   simple_form
   simplecov
   therubyracer

@@ -21,8 +21,8 @@ module ArticlesHelper
     <<-HTML
       <div class="article_container">
         <h3>#{link_to article.title, article_path(article), :class => 'article_title'}</h3>
-        #{(Rails.cache.fetch(CacheKey.article_short_body(article)) { article_rubrics(article) }).html_safe }
-        #{(Rails.cache.fetch(CacheKey.article_rubric_line(article)) { article_body(article) }).html_safe }
+        #{(Rails.cache.fetch(CacheKey.article_rubrics_line(article)) { article_rubrics(article) }).html_safe }
+        #{(Rails.cache.fetch(CacheKey.article_short_body(article)) { article_body(article) }).html_safe }
       </div>
     HTML
   end
