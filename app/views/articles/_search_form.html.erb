@@ -1,6 +1,6 @@
 <div id="search_form_container">
   <%= search_form_for @search_articles || Article.search(), :url => articles_path do |f| %>
-    <%= f.text_field :title_or_rubrics_title_or_body_cont %>
+    <%= f.text_field :title_or_rubrics_title_or_body_or_short_description_cont %>
     <%= f.submit %>
   <% end %>
 </div>

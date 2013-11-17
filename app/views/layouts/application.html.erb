@@ -10,7 +10,7 @@
   <div id="header_inner">
     <%= link_to t(:site_name), "/#{I18n.locale if I18n.locale == :en }", :id => 'logo' %>
     <div id="site_menu">
-      <%= link_to t(:home), "/#{I18n.locale if I18n.locale != I18n.default_locale}", :class => 'menu_links' %>
+      <%= link_to t(:home), "/#{I18n.locale if I18n.locale == :en }", :class => 'menu_links' %>
       <%= link_to t('about_me.title'), about_me_path, :class => 'menu_links' %>
       <%= link_to '', url_for(:controller =>controller_name, :action => action_name, :params => params.except(:controller, :action, :locale, :id), :locale => 'ru'),
                   :id => 'russian_lang', :class => 'menu_links' %>

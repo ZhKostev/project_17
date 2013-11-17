@@ -14,10 +14,10 @@ class ArticlesController < ApplicationController
   private
 
   def set_article
-    @article = Article.includes(:rubrics).find(params[:id])
+    @article = Article.includes(:rubrics).published.find(params[:id])
     if @article.language.to_sym != I18n.locale
+      redirect_to @article.translation if @article.translation
       @translation_not_found = @article.translation.nil?
-      @article = @article.translation if @article.translation
     end
   end
 

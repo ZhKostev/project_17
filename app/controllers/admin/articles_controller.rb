@@ -1,6 +1,7 @@
 class Admin::ArticlesController < Admin::BaseController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :prepare_article_form, only: [:new, :edit]
+  before_action :raise_error_for_wrong_locale, only: [:index]
 
   def index
     @articles = Article.page(params[:page] || 1).per(5)
@@ -60,6 +61,11 @@ class Admin::ArticlesController < Admin::BaseController
   def prepare_article_form
     @articles_for_translation = Article.where('id != ?', @article.try(:id) || 0).select(:title, :id).to_a
     @article_rubrics = Rubric.all
+  end
+
+  # Internal: Raise 404 if
+  def raise_error_for_wrong_locale
+    #TODO implement
   end
 
 end
